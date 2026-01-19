@@ -1,0 +1,791 @@
+/* -------------------------------------------------------------
+======	RESET
+------------------------------------------------------------- */
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	color: #555;
+	-webkit-font-smoothing: antialiased;
+}
+body {
+	width:100%;
+	background: #fff;
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.6;
+}
+a {
+	color: #0078CF;
+	font-weight: normal;
+	cursor: pointer;
+	text-decoration: none;
+	transition:color 0.2s ease;
+}
+a:hover {
+	color: #000;
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	background: rgba(0, 0, 0, .025);
+}
+::selection {
+background: #0078CF;
+color: #fff;
+text-shadow: none;
+}
+p {
+	margin: 0 0 1em;
+}
+p:last-child {
+	margin-bottom: 0;
+}
+a:visited {
+	opacity:0.9;
+}
+a:active, a:focus {
+	position:relative;
+	top:1px;
+	font-size: 1em;
+}
+abbr[title] {
+	border-bottom:1px dotted;
+}
+dfn {
+	font-style:italic;
+}
+hr {
+	display:block;
+	height:1px;
+	border:0;
+	border-top:1px solid #ddd;
+	margin:1em 0;
+	padding:0;
+}
+pre, code, kbd, samp {
+	font-family:monospace;
+	font-size:1em;
+}
+blockquote {
+	margin: 0 .5em 1em .5em;
+	font-size: 1.05em;
+	font-style: italic;
+	color: #303030;
+}
+blockquote p {
+	font-size: 1.1em;
+	margin-bottom: 0;
+}
+.colleft {
+	display: block;
+	border-right: 1px solid #DDD;
+	padding: 0 .5em 0 0;
+	margin-bottom: 1em;
+	line-height: 1.3em;
+	color: #727272;
+	text-align: right;
+}
+.colright {
+	display: block;
+	border-left: 1px solid #DDD;
+	margin-bottom: 1em;
+	padding: 0 0 0 .5em;
+	line-height: 1.3em;
+	color: #727272;
+	text-align: left;
+}
+
+b, strong {
+	font-weight:700;
+}
+small {
+	font-size:85%;
+	color: #999;
+}
+sub, sup {
+	font-size:75%;
+	line-height:0;
+	position:relative;
+	vertical-align:baseline;
+}
+sup {
+	top:-0.5em;
+}
+sub {
+	bottom:-0.25em;
+}
+dd {
+	margin:0 0 0 40px;
+}
+dt {
+	font-weight: 700;
+}
+ul, ol {
+	list-style:none;
+	list-style-image:none;
+	margin:0;
+	padding:0;
+}
+img {
+	border:0;
+	vertical-align:middle
+}
+figure {
+	margin:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+td {
+	vertical-align:top;
+}
+/* -------------------------------------------------------------
+======	STYLES
+------------------------------------------------------------- */
+
+/* -- TYPO
+------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+	margin:0 0 1em;
+	font-weight: normal;
+}
+h1 {
+	font-size: 3.2em;
+	letter-spacing: -0.075em;
+	line-height: 0.95;
+	color: #555;
+	margin: 0 0 0.5em;
+	font-weight: normal;
+}
+h2 {
+	font-size: 2em;
+	margin: 0 0 15px;
+	letter-spacing: -0.05em;
+	color: #555;
+	line-height: 1;
+}
+h3 {
+	font-size: 1.75em;
+}
+h4 {
+	font-size: 1.5em;
+}
+h5 {
+	font-size: 1.17em;
+	text-transform: uppercase;
+	margin: 0;
+	color: #555;
+}
+h6 {
+	font-size: 1em;
+	margin-bottom: 2px;
+	font-weight: 700;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	color:#333;
+	text-decoration: none;
+}
+h1 a:hover {
+	color: #025391;
+	text-shadow: 3px 2px 11px rgba(0, 0, 0, 0.4);
+	text-decoration: none;
+} 
+h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+	color:#0078CF;
+	text-decoration: underline;
+}
+.subtitle {
+    display: block; /* Moves word to a new line */
+    font-size: 0.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-left: 5px;
+}
+/* -- GRID  
+------------------------------------------------------------- */
+.container {
+	width: 90%;
+	margin: 5em auto;
+	max-width: 1100px;
+	min-width: 300px;
+}
+.grid-wrap {
+	margin-left: -3em; /* the same as your gutter */
+	overflow: hidden;
+}
+.grid-wrap:before, .grid-wrap:after {
+	content:"";
+	display:table;
+}
+.grid-wrap:after {
+	clear:both;
+}
+.grid {
+	float: left;
+	padding-left: 3em; /* this is your gutter between columns */
+	width: 100%;
+	box-sizing: border-box;
+}
+.half-gutter {
+	margin-left: -1.5em;
+}
+.half-gutter .grid-col {
+	padding-left: 1.5em;
+}
+.col-full {
+	width: 100%;
+}
+.col-one-half {
+	width: 50%;
+}
+.col-one-third {
+	width: 33.333%;
+}
+.col-two-thirds {
+	width: 66.666%;
+}
+.col-one-quarter {
+	width: 25%;
+}
+.col-three-quarters {
+	width: 75%;
+}
+.divide-top {
+	border-top: 1px solid #ccc;
+	padding-top: 2em;
+	margin-top: 1.5em;
+}
+.mright {
+	margin-right: 3em;
+}
+.mleft {
+	margin-left: 3em;
+}
+.mtop {
+	margin-top: 3em;
+}
+.mbottom {
+	margin-bottom: 3em;
+}
+.halfmright {
+	margin-right: 1.5em;
+}
+.halfmleft {
+	margin-left: 1.5em;
+}
+.halfmtop {
+	margin-top: 1.5em;
+}
+.quartermtop {
+	margin-top: .75em;
+}
+.halfmbottom {
+	margin-bottom: 1.5em;
+}
+.quartermbottom {
+	margin-bottom: .75em;
+}
+.fright, .fleft {
+	display:block;
+	overflow:hidden;
+}
+.fright {
+	float:right;
+}
+.fleft {
+	float:left;
+}
+.alignleft {
+	float: left;
+	clear: left;
+	margin: 0.38em 1.62em 0.38em 0;
+}
+.alignright {
+	float: right;
+	clear: right;
+	margin: 0.38em 0 0.38em 1.62em;
+}
+.aligncenter {
+	margin: 0 auto 1.62em;
+	display: block;
+}
+/* -- MISC
+------------------------------------------------------------- */
+figure {
+	max-height: 100%;
+	overflow: hidden;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+a img {
+	transition: opacity 1s ease;
+}
+a img:hover {
+	opacity: 0.7;
+}
+/* -------------------------------------------------------------
+======	PAGES
+------------------------------------------------------------- */
+    
+/* -- HEADER
+------------------------------------------------------------- */
+header#navtop {
+	margin-bottom: .1em;
+	clear: both;
+	overflow: hidden;
+}
+header nav ul {
+	float: left;
+	overflow: hidden;
+	padding: 0 3em 0 2em;
+	border-left: 1px solid #ddd;
+	line-height: 2em;
+}
+nav a, menu a {
+	text-decoration: none;
+	color: #555;
+}
+.navactive {
+	color: #0078CF;
+}
+.logo {
+	margin-bottom: 3em;
+}
+.logo:hover {
+	background: none;
+}
+/* -- GENERAL 
+------------------------------------------------------------- */
+.main > section {
+	margin-bottom: 2em;
+}
+.main header {
+	color: #555;
+	margin-bottom: 3em;
+}
+.main header hr {
+	border-top-color:#999;
+}
+.arrow:after {
+	content:" \27F6"; /* html unicode: &#10230; */
+}
+header .arrow {
+	color: #999;
+	font-style: italic;
+}
+.arrow:hover {
+	color: #0078CF;
+}
+/* -- FOOTER
+------------------------------------------------------------- */
+footer {
+	color: #555;
+	margin-bottom: 7em;
+}
+footer nav ul {
+	float: right;
+	overflow: hidden;
+}
+footer a {
+	color: #999;
+}
+footer li {
+	float: left;
+	margin-right: 1em;
+	padding-right: 1em;
+	border-right: 1px solid #DDD;
+	font-size: 0.85em;
+}
+footer li:last-child {
+	margin-right: 0;
+	padding-right: 0;
+	border-right: none;
+}
+.up a {
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+}
+
+/* -- HOME-PAGE
+------------------------------------------------------------- */
+/* Services */
+.services aside {
+	color: #999;
+	padding-top: 1em;
+	border-top: 1px solid #DDD;
+}
+.services aside:after, .services h5:after {
+	content: "";
+	display: block;
+	height: 1px;
+	width: 1em;
+	background: #DDD;
+	margin: 1em 0;
+}
+/* -- Modal Container
+------------------------------------------------------------- */
+#imageModal {
+  display: none; /* Hide the modal by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+}
+/* Modal Content */
+#modalImage {
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%; /* Adjust the width as needed */
+  max-height: 90vh; /* Adjust the height as needed */
+  box-shadow: 0 15px 20px rgba(110, 110, 110, 0.5);
+  border: 2px solid #000; /* Border properties */
+  border-radius: 0; /* Optional: Add border radius for rounded corners using px */
+}
+/* Styling specific to the iframe modal */
+#iframeModal #modaliframe {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    height: calc(85vw * 9 / 16); /* 16:9 aspect ratio */
+    border: none;
+}
+
+/* Common styling for both modals */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.close {
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+iframe {border:none;}
+
+/* -- WORKS / Home-page and Works-page
+------------------------------------------------------------- */
+.works figure > a {
+	display: block;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	border-top: 1px solid #DDD;
+	padding-top: 1em;
+}
+.works figure .zoom,
+.works figure .play {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.works figure .zoom {
+    background: url(../img/zoom.png) no-repeat center;
+}
+.works figure .play {
+    background: url(../img/play.png) no-repeat center;
+}
+.works figure figcaption {
+	margin-top: .2em;
+	padding: 0 0.5em;
+	white-space: nowrap;
+}
+.works figure figcaption a {
+	line-height: 2em;
+	color: #555;
+	font-weight: 700;
+}
+.works figure figcaption p {
+	margin: 0;
+}
+.works-page .works figure {
+	margin-bottom: 2em;
+}
+.main aside {
+	margin-bottom: 3em
+}
+.main aside menu {
+	padding: 0 0 0 1em;
+	line-height: 2em;
+}
+.main aside menu a {
+	color: #999;
+}
+.main aside menu .buttonactive {
+	color: #0078CF;
+}
+/*-- Description at top of gallery pages
+------------------------------------------------------------- */
+.gallery {
+	display: block;
+	background: #F5F5F5;
+	border-right: 1px solid #DDD;
+	padding: 5px 5px 5px 10px;
+	margin: 0 10px 0 5px;
+}
+/* -- VIDEO 
+------------------------------------------------------------- */
+
+.video-container
+{
+	position: relative;
+	width: 100%;
+	padding-bottom: 56.25%;
+	/* Adjust this value based on your video's aspect ratio (height / width * 100) */
+	margin-bottom: 2em;
+	overflow: hidden;
+}
+.video-container iframe
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* -- SUBPAGES 
+------------------------------------------------------------- */
+
+/* Work-page (single) */
+.work-page figure {
+	margin-bottom: 3em;
+}
+.work-page figcaption {
+	text-align: center;
+	margin-top: 1em;
+}
+/* Services-page */
+.warning {
+	display: block;
+	background: #F5F5F5;
+	border: 1px solid #DDD;
+	font-weight: 900;
+	text-align: left;
+	padding: 5px 0 5px 10px;
+	margin: 10px 10px 0 5px;
+}
+
+/* -------------------------------------------------------------
+======	MISC
+------------------------------------------------------------- */
+.hidden {
+	display:none !important;
+	visibility:hidden;
+}
+
+/* ======================================================
+   HOME PAGE SLIDESHOW (SC STYLE — FADE, 4:3)
+   ====================================================== */
+.home-page .slideshow {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  position: relative;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+/* Each slide is stacked */
+.home-page .slideshow figure {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 2s ease-in-out; /* FADE TIME */
+}
+
+/* Active slide */
+.home-page .slideshow figure.is-active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Image fill */
+.home-page .slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* -------------------------------------------------------------
+======	MEDIA QUERIES
+------------------------------------------------------------- */
+
+/* -- Media query 1 (mq1)
+------------------------------------------------------------- */
+@media only screen and (max-width: 60em) { /* 16 / 960 */
+ .mq1-col-full {
+width: 100%;
+}
+ .mq1-col-one-half {
+width: 50%;
+}
+ .mq1-col-one-third {
+width: 33.333%;
+}
+ .mq1-col-two-thirds {
+width: 66.666%;
+}
+ .mq1-col-one-quarter {
+width: 25%;
+}
+ .mq1-col-three-quarters {
+width: 75%;
+}
+h1 {
+font-size: 3.1em;
+}
+ footer li {
+float: left;
+margin-right: 0.5em;
+padding-right: 0.5em;
+border-right: 1px solid #DDD;
+}
+}
+    
+/* -- Media query 2 (mq2)
+------------------------------------------------------------- */
+@media only screen and (max-width: 48em) { /* 16 / 768 */
+ .mq2-col-full {
+width: 100%;
+}
+ .mq2-col-one-half {
+width: 50%;
+}
+ .mq2-col-one-third {
+width: 33.333%;
+}
+ .mq2-col-two-thirds {
+width: 66.666%;
+}
+ .mq2-col-one-quarter {
+width: 25%;
+}
+ .mq2-col-three-quarters {
+width: 75%;
+}
+header nav {
+width: 100%;
+}
+ header nav ul {
+padding: 0;
+border-left:none;
+line-height: 2em;
+}
+ header nav ul li {
+float: left;
+padding: 0 1em;
+border-left:1px solid #ddd;
+}
+}
+    
+/* -- Media query 3 (mq3)
+------------------------------------------------------------- */
+@media only screen and (max-width: 30em) { /* 16 / 480 */
+ .mq3-col-full {
+width: 100%;
+}
+ .mq3-col-one-half {
+width: 50%;
+}
+ .mq3-col-one-third {
+width: 33.333%;
+}
+ .mq3-col-two-thirds {
+width: 66.666%;
+}
+ .mq3-col-one-quarter {
+width: 25%;
+}
+ .mq3-col-three-quarters {
+width: 75%;
+}
+ .mq3-none {
+display: none;
+}
+header nav ul li {
+margin-bottom: 3px;
+}
+footer nav ul li {
+letter-spacing: .2em;
+padding: 0 .7em;
+margin-bottom: 10px;
+font-size: 1.1em;
+display: inline;
+line-height: 1.8em;
+}
+ .services article {
+margin-top: 3em;
+}
+.services article:first-of-type {
+margin-top: 0;
+}
+}
+
+/* -- PRINT STYLES 
+------------------------------------------------------------- */
+@media print {
+* {
+	background:transparent !important;
+	color:black !important;
+	text-shadow:none !important;
+	filter:none !important;
+}
+abbr[title]:after {
+	content:"("attr(title) ")"
+}
+pre, blockquote {
+	page-break-inside:avoid;
+}
+thead {
+	display:table-header-group;
+}
+tr, img {
+	page-break-inside:avoid;
+}
+img {
+	max-width:100% !important
+}
+p, h2, h3 {
+	orphans:3;
+	widows:3;
+}
+h2, h3 {
+	page-break-after:avoid;
+}
+}
+ 
+/* -------------------------------------------------------------
+======	END
+------------------------------------------------------------- */
