@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# BBEdit
+*.bbprojectd/
+*.bbproject/
+
+# Optional: local junk
+Thumbs.db
