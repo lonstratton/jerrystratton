@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>404 Not Found | Jerry Stratton Photography</title>
+	<meta name="description" content="404 Not Found | Jerry Stratton Photography">
+	<meta name="robots" content="noindex, follow">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="/favicon.ico" sizes="any">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  	<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<div class="container">
+	<header id="navtop">
+		<div class="logo fleft">
+			<h1>
+				<a href="/"> JERRY STRATTON <span class="subtitle">photography</span></a> 
+			</h1>
+		</div>
+		<nav class="fright">
+			<h4>
+				404 | Not Found
+			</h4>
+			<ul>
+				<li><a href="/">Home</a></li>
+			</ul>
+			<ul>
+				<li><a href="/galleries.html">Galleries</a></li>
+			</ul>
+		</nav>
+	</header>
+	<hr>
+	<div class="grid-wrap">
+		<div class="grid col-full">
+			<h2 style="text-align:center;">
+				Page not found
+			</h2>
+			<img src="img/404.jpg" alt="404 error — page not found" style="display:block;margin:0 auto;max-width:100%;height:auto;">
+			<h3 id="goBack" style="text-align:center;cursor:pointer;font-weight:400;"
+							onmouseover="this.style.fontWeight='700'"
+							onmouseout="this.style.fontWeight='400'">
+				&larr; BACK TO PREVIOUS PAGE
+			</h3>
+		</div>
+	</div>
+	<div class="divide-top">
+		<footer class="grid-wrap">
+			<nav class="grid col-one-third mq3-col-full">
+				<ul class="fleft">
+					<li><a href="/">Home</a></li>
+					<li><a href="/about.html">About</a></li>
+					<li><a href="/video.html">Video</a></li>
+					<li><a href="mailto:jerry@jerrystrattonphotography.com?subject=From%20the%20website">Contact</a></li>
+				</ul>
+			</nav>
+			<div class="grid col-two-thirds mq3-col-full">
+				<ul>
+					<li>&copy;2026 Jerry Stratton Photography | Images can only be used with the express written permission from Jerry Stratton.</li>
+				</ul>
+			</div>
+		</footer>
+	</div>
+</div>
+
+<script src="/js/jquery-1.7.2.min.js"></script>
+<script src="/js/scripts.js"></script>
+<script>
+(function () {
+  var goBack = document.getElementById("goBack");
+  if (!goBack) return;
+
+  goBack.addEventListener("click", function () {
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      window.location.href = "/";
+    }
+  });
+})();
+</script>
+</body>
+</html>
