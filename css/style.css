@@ -242,7 +242,7 @@ h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 /* -- GRID  
 ------------------------------------------------------------- */
 .container {
-	width: 95%;
+	width: 93%;
 	margin: 5em auto;
 	max-width: 1200px;
 }
