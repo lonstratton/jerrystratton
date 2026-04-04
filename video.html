@@ -6,8 +6,6 @@
 	<title>Video Tutorials | Jerry Stratton Photography</title>
 	<meta name="description" content="Jerry Stratton | Video Tutorials">
 	<link rel="canonical" href="https://jerrystrattonphotography.com/video.html">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="icon" href="/favicon.ico" sizes="any">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -23,10 +21,8 @@
 		JERRY STRATTON <span class="subtitle">photography</span></a>
 	</h1>
 	</div>
-		<nav class="fright">
-			<h4>
-				Video 
-			</h4>
+		<nav class="fright mq2-none">
+			<div class="nav-heading">Video</div>
 			<ul>
 				<li><a href="/">Home</a></li>
 			</ul>
@@ -40,6 +36,16 @@
 				<li><a href="https://www.youtube.com/channel/UCxlyKY6pEFs9u-bQvoyB0EA/videos" target="_blank"><img src="img/yt3.png" alt="YouTube channel" height="25" width="25"></a></li>
 			</ul>
 		</nav>
+	<button id="nav-toggle" class="mq2-only" type="button" aria-expanded="false" aria-controls="mobile-nav"> <span class="nav-toggle-icon" aria-hidden="true"></span> <span class="nav-toggle-icon" aria-hidden="true"></span> <span class="nav-toggle-icon" aria-hidden="true"></span> <span class="nav-toggle-label">Menu</span> </button> 
+	<nav id="mobile-nav" aria-label="Mobile navigation">
+		<ul>
+			<li class="navactive">Video</li>
+			<li><a href="/">Home</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="galleries.html">Galleries</a></li>
+			<li><a href="https://www.youtube.com/channel/UCxlyKY6pEFs9u-bQvoyB0EA/videos" target="_blank"><img src="img/yt.png" alt="YouTube channel" height="25" width="25"></a></li>
+		</ul>
+	</nav>
 	</header>
 		<!-- The Modal for Iframe -->
 		<div id="iframeModal" class="modal">
@@ -49,7 +55,7 @@
 		</div>
 	</div>
 	<nav class="grid-wrap works">
-		<figure class="grid col-one-third mq1-col-one-half mq2-col-full mq3-col-full">
+		<figure class="grid col-one-third mq2-col-one-half mq3-col-full">
 			<a onclick="openiframeModal('https://www.youtube.com/embed/sGnL27qC5RM?si=STdm3j92ucwkWsPE')"> <img src="img/composition.jpg" alt="Picture Components"> 
 			<span class="play" style="opacity: 0;"> </span>
 			</a> 
@@ -57,7 +63,7 @@
 				Picture Components
 			</figcaption>
 		</figure>
-		<figure class="grid col-one-third mq1-col-one-half mq2-col-full mq3-col-full">
+		<figure class="grid col-one-third mq2-col-one-half mq3-col-full">
 			<a onclick="openiframeModal('https://www.youtube.com/embed/d4OZ8arFoL4?si=raAJz5SKBIS00uDC')"> <img src="img/meaning.jpg" alt="Picture Components"> 
 			<span class="play" style="opacity: 0;"> </span>
 			</a> 
@@ -65,7 +71,7 @@
 				How Viewers get Meaning from Photographs
 			</figcaption>
 		</figure>
-		<figure class="grid col-one-third mq1-col-one-half mq2-col-full mq3-col-full">
+		<figure class="grid col-one-third mq2-col-one-half mq3-col-full">
 			<a onclick="openiframeModal('https://www.youtube.com/embed/tVehCn59Ie4?si=8At2DmI9hmRtOsgF')"> <img src="img/idea.jpg" alt="Picture Components"> 
 			<span class="play" style="opacity: 0;"> </span>
 			</a> 
@@ -75,22 +81,15 @@
 		</figure>
 	</nav>
 	<div class="divide-top">
-		<footer class="grid-wrap">
-			<nav class="grid col-one-third mq3-col-full">
-				<ul class="fleft">
-					<li><a href="/">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="video.html">Video</a></li>
-					<li><a href="mailto:jerry@jerrystrattonphotography.com?subject=From%20the%20website">Contact</a></li>
-				</ul>
-			</nav>
-			<div class="grid col-two-thirds mq3-col-full">
-				<ul>
-					<li>&copy;2026 Jerry Stratton Photography | Images can only be used with the express written permission from Jerry Stratton.</li>
-				</ul>
-			</div>
-		</footer>
-	</div>
+	<footer class="site-footer">
+		<div class="site-footer__nav">
+			<a href="/">Home</a> <a href="about.html">About</a> <a href="video.html">Video</a> <a href="mailto:jerry@jerrystrattonphotography.com?subject=From%20the%20website">Contact</a> 
+		</div>
+		<div class="site-footer__copy">
+			&copy;2026 Jerry Stratton Photography | Images can only be used with the express written permission from Jerry Stratton. 
+		</div>
+	</footer>
+</div>
 </div>
 <script src="js/jquery-1.7.2.min.js"></script>
 <script src="js/scripts.js"></script>

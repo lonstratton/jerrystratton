@@ -137,8 +137,58 @@ function scrollableElement(els) {
     );
 }
 
-    applyHoverEffect(".zoom");
+        applyHoverEffect(".zoom");
     applyHoverEffect(".play");
-	
+
 // END
 });
+
+/* ====================================================
+   MOBILE HAMBURGER MENU (mq2)
+   ==================================================== */
+(function () {
+    var toggle = document.getElementById('nav-toggle');
+    var mobileNav = document.getElementById('mobile-nav');
+    if (!toggle || !mobileNav) return;
+
+    function openNav() {
+        document.body.classList.add('nav-open');
+        toggle.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeNav() {
+        document.body.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    function toggleNav() {
+        if (document.body.classList.contains('nav-open')) {
+            closeNav();
+        } else {
+            openNav();
+        }
+    }
+
+    toggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        toggleNav();
+    });
+
+    mobileNav.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+            closeNav();
+        }
+    });
+
+    document.addEventListener('click', function (e) {
+        if (!document.body.classList.contains('nav-open')) return;
+        if (mobileNav.contains(e.target) || toggle.contains(e.target)) return;
+        closeNav();
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            closeNav();
+        }
+    });
+})();

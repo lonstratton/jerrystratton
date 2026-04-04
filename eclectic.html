@@ -6,8 +6,6 @@
 	<title>Eclectic | Jerry Stratton Photography</title>
 	<meta name="description" content="Ideas derived from a broad and diverse range of sources.">
 	<link rel="canonical" href="https://jerrystrattonphotography.com/eclectic.html">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="icon" href="/favicon.ico" sizes="any">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -23,10 +21,8 @@
 		JERRY STRATTON <span class="subtitle">photography</span></a>
 	</h1>
 	</div>
-		<nav class="fright">
-			<h4>
-				Eclectic
-			</h4>
+		<nav class="fright mq2-none">
+			<div class="nav-heading">Eclectic</div>
 			<ul>
 				<li><a href="junkyard.html">Junk Yard</a></li>
 				<li><a href="pinhole.html">Pinhole</a></li>
@@ -43,6 +39,21 @@
 				<li><a href="galleries.html">GALLERIES</a></li>
 			</ul>
 		</nav>
+	<button id="nav-toggle" class="mq2-only" type="button" aria-expanded="false" aria-controls="mobile-nav"> <span class="nav-toggle-icon" aria-hidden="true"></span> <span class="nav-toggle-icon" aria-hidden="true"></span> <span class="nav-toggle-icon" aria-hidden="true"></span> <span class="nav-toggle-label">Menu</span> </button> 
+	<nav id="mobile-nav" aria-label="Mobile navigation">
+	<ul>
+		<li class="navactive">Eclectic</li>
+		<li><a href="junkyard.html">Junk Yard</a></li>
+		<li><a href="pinhole.html">Pinhole</a></li>
+		<li><a href="figure.html">Figure</a></li>
+		<li><a href="rps.html">Rock Paper Scissors</a></li>
+		<li><a href="people.html">People</a></li>
+		<li><a href="sketch.html">Sketch Book</a></li>
+		<li><a href="streetmusic.html">Street Music</a></li>
+		<li><a href="weaving.html">Woven Photographs</a></li>
+		<li><a href="galleries.html">GALLERIES</a></li>
+	</ul>
+	</nav>
 	</header>
 	<div class="about-page main grid-wrap">
 		<header class="grid col-full">
@@ -55,7 +66,7 @@
 	<div class="works-page main grid-wrap">
 		<nav class="grid col-full mq2-col-full">
 			<div class="grid-wrap works">
-				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-quarter mq3-col-one-half" id="metaphor">
+				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-third mq3-col-one-half" id="metaphor">
 					<a onclick="openModal('img/eclectic/modified_metaphor.jpg')"> <img src="img/eclectic/modified_metaphor.jpg" alt="" style="width: 100%;"> 
 					<span class="zoom"></span>
 					</a> 
@@ -63,7 +74,7 @@
 						Modified Metaphor 
 					</figcaption>
 				</figure>
-				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-quarter mq3-col-one-half" id="canyoncloud">
+				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-third mq3-col-one-half" id="canyoncloud">
 					<a onclick="openModal('img/eclectic/Canyon_cloud.jpg')"> <img src="img/eclectic/Canyon_cloud.jpg" alt="" style="width: 100%;"> 
 					<span class="zoom"></span>
 					</a> 
@@ -71,7 +82,7 @@
 						Canyon Cloud 
 					</figcaption>
 				</figure>
-				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-quarter mq3-col-one-half" id="earthmarks">
+				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-third mq3-col-one-half" id="earthmarks">
 					<a onclick="openModal('img/eclectic/Earth_marks.jpg')"> <img src="img/eclectic/Earth_marks.jpg" alt="" style="width: 100%;"> 
 					<span class="zoom"></span>
 					</a> 
@@ -79,7 +90,7 @@
 						Earth Marks 
 					</figcaption>
 				</figure>
-				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-quarter mq3-col-one-half" id="hotair">
+				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-third mq3-col-one-half" id="hotair">
 					<a onclick="openModal('img/eclectic/balloon.jpg')"> <img src="img/eclectic/balloon.jpg" alt="" style="width: 100%;"> 
 					<span class="zoom"></span>
 					</a> 
@@ -87,7 +98,7 @@
 						Hot Air 
 					</figcaption>
 				</figure>
-				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-quarter mq3-col-one-half" id="autumnstorm">
+				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-third mq3-col-one-half" id="autumnstorm">
 					<a onclick="openModal('img/eclectic/Autumn_Storm.jpg')"> <img src="img/eclectic/Autumn_Storm.jpg" alt="" style="width: 100%;"> 
 					<span class="zoom"></span>
 					</a> 
@@ -95,7 +106,7 @@
 						Autumn Storm 
 					</figcaption>
 				</figure>
-				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-quarter mq3-col-one-half" id="riverview">
+				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-third mq3-col-one-half" id="riverview">
 					<a onclick="openModal('img/eclectic/River_view.jpg')"> <img src="img/eclectic/River_view.jpg" alt="" style="width: 100%;"> 
 					<span class="zoom"></span>
 					</a> 
@@ -103,7 +114,7 @@
 						River View 
 					</figcaption>
 				</figure>
-				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-quarter mq3-col-one-half" id="capturedstone">
+				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-third mq3-col-one-half" id="capturedstone">
 					<a onclick="openModal('img/eclectic/Captured_stone.jpg')"> <img src="img/eclectic/Captured_stone.jpg" alt="" style="width: 100%;"> 
 					<span class="zoom"></span>
 					</a> 
@@ -111,7 +122,7 @@
 						Captured Stone 
 					</figcaption>
 				</figure>
-				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-quarter mq3-col-one-half">
+				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-third mq3-col-one-half">
 					<a onclick="openModal('img/eclectic/Sunset_at_Eight_Thousand_Feet.jpg')"> <img src="img/eclectic/Sunset_at_Eight_Thousand_Feet.jpg" alt="" style="width: 100%;"> 
 					<span class="zoom"></span>
 					</a> 
@@ -119,7 +130,7 @@
 						Sunset at Eight Thousand Feet 
 					</figcaption>
 				</figure>
-				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-quarter mq3-col-one-half" id="perception">
+				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-third mq3-col-one-half" id="perception">
 					<a onclick="openModal('img/eclectic/Perception.jpg')"> <img src="img/eclectic/Perception.jpg" alt="" style="width: 100%;"> 
 					<span class="zoom"></span>
 					</a> 
@@ -127,7 +138,7 @@
 						Perception 
 					</figcaption>
 				</figure>
-				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-quarter mq3-col-one-half" id="relative">
+				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-third mq3-col-one-half" id="relative">
 					<a onclick="openModal('img/eclectic/Relative.jpg')"> <img src="img/eclectic/Relative.jpg" alt="" style="width: 100%;"> 
 					<span class="zoom"></span>
 					</a> 
@@ -135,7 +146,7 @@
 						Relative 
 					</figcaption>
 				</figure>
-				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-quarter mq3-col-one-half" id="lindagravel">
+				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-third mq3-col-one-half" id="lindagravel">
 					<a onclick="openModal('img/eclectic/Linda_gravel_self.jpg')"> <img src="img/eclectic/lindagravel_tn.jpg" alt="" style="width: 100%;"> 
 					<span class="zoom"></span>
 					</a> 
@@ -143,7 +154,7 @@
 						Linda Gravel Self 
 					</figcaption>
 				</figure>
-				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-quarter mq3-col-one-half" id="gravelandpic">
+				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-third mq3-col-one-half" id="gravelandpic">
 					<a onclick="openModal('img/eclectic/gravelpic.jpg')"> <img src="img/eclectic/gravelpicture.jpg" alt="" style="width: 100%;"> 
 					<span class="zoom"></span>
 					</a> 
@@ -151,7 +162,7 @@
 						Gravel and Gravel Picture 
 					</figcaption>
 				</figure>
-				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-quarter mq3-col-one-half" id="wallchalice">
+				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-third mq3-col-one-half" id="wallchalice">
 					<a onclick="openModal('img/eclectic/Wall_Chalice.jpg')"> <img src="img/eclectic/wall_chalice_tn.jpg" alt="" style="width: 100%;"> 
 					<span class="zoom"></span>
 					</a> 
@@ -159,7 +170,7 @@
 						Wall Chalice 
 					</figcaption>
 				</figure>
-				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-quarter mq3-col-one-half" id="waterock">
+				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-third mq3-col-one-half" id="waterock">
 					<a onclick="openModal('img/eclectic/waterock.jpg')"> <img src="img/eclectic/waterock.jpg" alt="" style="width: 100%;"> 
 					<span class="zoom"></span>
 					</a> 
@@ -167,7 +178,7 @@
 						Waterock 
 					</figcaption>
 				</figure>
-				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-quarter mq3-col-one-half" id="transcend">
+				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-third mq3-col-one-half" id="transcend">
 					<a onclick="openModal('img/eclectic/tsc.jpg')"> <img src="img/eclectic/tsc.jpg" alt="" style="width: 100%;"> 
 					<span class="zoom"></span>
 					</a> 
@@ -175,7 +186,7 @@
 						Transcend 
 					</figcaption>
 				</figure>
-				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-quarter mq3-col-one-half" id="waterfall">
+				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-third mq3-col-one-half" id="waterfall">
 					<a onclick="openModal('img/eclectic/waterfallwall.jpg')"> <img src="img/eclectic/waterfallwall.jpg" alt="" style="width: 100%;"> 
 					<span class="zoom"></span>
 					</a> 
@@ -183,7 +194,7 @@
 						Wall Waterfall 
 					</figcaption>
 				</figure>
-				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-quarter mq3-col-one-half" id="norwayhouse">
+				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-third mq3-col-one-half" id="norwayhouse">
 					<a onclick="openModal('img/eclectic/norway_snow_house.jpg')"> <img src="img/eclectic/norway_snow_house.jpg" alt="" style="width: 100%;"> 
 					<span class="zoom"></span>
 					</a> 
@@ -191,7 +202,7 @@
 						Norway Snow House Cloud 
 					</figcaption>
 				</figure>
-				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-quarter mq3-col-one-half" id="cincycloud">
+				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-third mq3-col-one-half" id="cincycloud">
 					<a onclick="openModal('img/eclectic/cincycloud.jpg')"> <img src="img/eclectic/cincycloud.jpg" alt="" style="width: 100%;"> 
 					<span class="zoom"></span>
 					</a> 
@@ -199,7 +210,7 @@
 						Cincy Cloud 
 					</figcaption>
 				</figure>
-				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-quarter mq3-col-one-half" id="pier">
+				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-third mq3-col-one-half" id="pier">
 					<a onclick="openModal('img/eclectic/cincinnati_pier.jpg')"> <img src="img/eclectic/cincinnati_pier.jpg" alt="" style="width: 100%;"> 
 					<span class="zoom"></span>
 					</a> 
@@ -207,7 +218,7 @@
 						Cincinnati Pier 
 					</figcaption>
 				</figure>
-				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-quarter mq3-col-one-half" id="lowerfalls">
+				<figure class="grid col-one-quarter mq1-col-one-quarter mq2-col-one-third mq3-col-one-half" id="lowerfalls">
 					<a onclick="openModal('img/eclectic/cincinnati_lower_falls.jpg')"> <img src="img/eclectic/cincinnati_lower_falls.jpg" alt="" style="width: 100%;"> 
 					<span class="zoom"></span>
 					</a> 
@@ -291,22 +302,15 @@
 		</nav>
 	</div>
 	<div class="divide-top">
-		<footer class="grid-wrap">
-			<nav class="grid col-one-third mq3-col-full">
-				<ul class="fleft">
-					<li><a href="/">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="video.html">Video</a></li>
-					<li><a href="mailto:jerry@jerrystrattonphotography.com?subject=From%20the%20website">Contact</a></li>
-				</ul>
-			</nav>
-			<div class="grid col-two-thirds mq3-col-full">
-				<ul>
-					<li>&copy;2026 Jerry Stratton Photography | Images can only be used with the express written permission from Jerry Stratton.</li>
-				</ul>
-			</div>
-		</footer>
-	</div>
+	<footer class="site-footer">
+		<div class="site-footer__nav">
+			<a href="/">Home</a> <a href="about.html">About</a> <a href="video.html">Video</a> <a href="mailto:jerry@jerrystrattonphotography.com?subject=From%20the%20website">Contact</a> 
+		</div>
+		<div class="site-footer__copy">
+			&copy;2026 Jerry Stratton Photography | Images can only be used with the express written permission from Jerry Stratton. 
+		</div>
+	</footer>
+</div>
 </div>
 <script src="js/jquery-1.7.2.min.js"></script>
 <script src="js/scripts.js"></script>

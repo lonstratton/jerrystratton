@@ -6,8 +6,6 @@
 	<title>Jerry Stratton Photography | About Jerry</title>
 	<meta name="description" content="Jerry Stratton | Photography">
 	<link rel="canonical" href="https://jerrystrattonphotography.com/about.html">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="icon" href="/favicon.ico" sizes="any">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -18,26 +16,33 @@
 <body>
 <div class="container">
 <header id="navtop">
-	<div class="logo fleft"> 
-	<h1><a href="/"> 
-		JERRY STRATTON <span class="subtitle">photography</span></a>
-	</h1>
+	<div class="logo fleft">
+		<h1>
+			<a href="/"> JERRY STRATTON <span class="subtitle">photography</span></a> 
+		</h1>
 	</div>
-    <nav class="fright">
-    <h4>About</h4>
-      <ul>
-        <li><a href="/">Home</a></li>
-      </ul>
-      <ul>
-        <li><a href="galleries.html">Galleries</a></li>
-      </ul>
-      <ul>
-        <li><a href="video.html">Video</a></li>
-      </ul>
-    </nav>
-    
-  </header>
-
+	<nav class="fright mq2-none">
+		<div class="nav-heading">About</div>
+		<ul>
+			<li><a href="/">Home</a></li>
+		</ul>
+		<ul>
+			<li><a href="galleries.html">Galleries</a></li>
+		</ul>
+		<ul>
+			<li><a href="video.html">Video</a></li>
+		</ul>
+	</nav>
+	<button id="nav-toggle" class="mq2-only" type="button" aria-expanded="false" aria-controls="mobile-nav"> <span class="nav-toggle-icon" aria-hidden="true"></span> <span class="nav-toggle-icon" aria-hidden="true"></span> <span class="nav-toggle-icon" aria-hidden="true"></span> <span class="nav-toggle-label">Menu</span> </button> 
+	<nav id="mobile-nav" aria-label="Mobile navigation">
+		<ul>
+			<li class="navactive">About</li>
+			<li><a href="/">Home</a></li>
+			<li><a href="galleries.html">Galleries</a></li>
+			<li><a href="video.html">Video</a></li>
+		</ul>
+	</nav>
+</header>
   <div class="about-page main grid-wrap">
     <div class="grid col-full">
     <a onclick="openModal('img/b36.jpg')"> <img src="img/jsp_bio1.jpg" alt="" style="width: 100%;" class="aligncenter"> <span class="zoom"></span> </a>
@@ -84,24 +89,16 @@
 		<img id="modalImage" class="modal-content" alt="#" src="#"> 
 		</div>
   </div>
-
 <div class="divide-top">
-		<footer class="grid-wrap">
-			<nav class="grid col-one-third mq3-col-full">
-				<ul class="fleft">
-					<li><a href="/">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="video.html">Video</a></li>
-					<li><a href="mailto:jerry@jerrystrattonphotography.com?subject=From%20the%20website">Contact</a></li>
-				</ul>
-			</nav>
-			<div class="grid col-two-thirds mq3-col-full">
-				<ul>
-					<li>&copy;2026 Jerry Stratton Photography | Images can only be used with the express written permission from Jerry Stratton.</li>
-				</ul>
-			</div>
-		</footer>
-	</div>
+	<footer class="site-footer">
+		<div class="site-footer__nav">
+			<a href="/">Home</a> <a href="about.html">About</a> <a href="video.html">Video</a> <a href="mailto:jerry@jerrystrattonphotography.com?subject=From%20the%20website">Contact</a> 
+		</div>
+		<div class="site-footer__copy">
+			&copy;2026 Jerry Stratton Photography | Images can only be used with the express written permission from Jerry Stratton. 
+		</div>
+	</footer>
+</div>
 </div>
 <script src="js/jquery-1.7.2.min.js"></script>
 <script src="js/scripts.js"></script>

@@ -6,8 +6,6 @@
 	<title>Street Music | Jerry Stratton Photography</title>
 	<meta name="description" content="Instead of using the street as stage, this gallery uses the street as subject.">
 	<link rel="canonical" href="https://jerrystrattonphotography.com/streetmusic.html">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="icon" href="/favicon.ico" sizes="any">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -23,10 +21,8 @@
 		JERRY STRATTON <span class="subtitle">photography</span></a>
 	</h1>
 	</div>
-		<nav class="fright">
-			<h4>
-				Street Music
-			</h4>
+		<nav class="fright mq2-none">
+			<div class="nav-heading">Street Music</div>
 			<ul>
 				<li><a href="junkyard.html">Junk Yard</a></li>
 				<li><a href="people.html">People</a></li>
@@ -43,6 +39,21 @@
 				<li><a href="galleries.html">GALLERIES</a></li>
 			</ul>
 		</nav>
+	<button id="nav-toggle" class="mq2-only" type="button" aria-expanded="false" aria-controls="mobile-nav"> <span class="nav-toggle-icon" aria-hidden="true"></span> <span class="nav-toggle-icon" aria-hidden="true"></span> <span class="nav-toggle-icon" aria-hidden="true"></span> <span class="nav-toggle-label">Menu</span> </button> 
+	<nav id="mobile-nav" aria-label="Mobile navigation">
+	<ul>
+		<li class="navactive">Street Music</li>
+		<li><a href="junkyard.html">Junk Yard</a></li>
+		<li><a href="pinhole.html">Pinhole</a></li>
+		<li><a href="figure.html">Figure</a></li>
+		<li><a href="rps.html">Rock Paper Scissors</a></li>
+		<li><a href="people.html">People</a></li>
+		<li><a href="sketch.html">Sketch Book</a></li>
+		<li><a href="eclectic.html">Eclectic</a></li>
+		<li><a href="weaving.html">Woven Photographs</a></li>
+		<li><a href="galleries.html">GALLERIES</a></li>
+	</ul>
+	</nav>
 	</header>
 	<div class="about-page main grid-wrap">
 		<header class="grid col-full">
@@ -203,22 +214,15 @@
 		</nav>
 	</div>
 	<div class="divide-top">
-		<footer class="grid-wrap">
-			<nav class="grid col-one-third mq3-col-full">
-				<ul class="fleft">
-					<li><a href="/">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="video.html">Video</a></li>
-					<li><a href="mailto:jerry@jerrystrattonphotography.com?subject=From%20the%20website">Contact</a></li>
-				</ul>
-			</nav>
-			<div class="grid col-two-thirds mq3-col-full">
-				<ul>
-					<li>&copy;2026 Jerry Stratton Photography | Images can only be used with the express written permission from Jerry Stratton.</li>
-				</ul>
-			</div>
-		</footer>
-	</div>
+	<footer class="site-footer">
+		<div class="site-footer__nav">
+			<a href="/">Home</a> <a href="about.html">About</a> <a href="video.html">Video</a> <a href="mailto:jerry@jerrystrattonphotography.com?subject=From%20the%20website">Contact</a> 
+		</div>
+		<div class="site-footer__copy">
+			&copy;2026 Jerry Stratton Photography | Images can only be used with the express written permission from Jerry Stratton. 
+		</div>
+	</footer>
+</div>
 </div>
 <script src="js/jquery-1.7.2.min.js"></script>
 <script src="js/scripts.js"></script>
