@@ -46,8 +46,7 @@
 			<h2 style="text-align:center;">
 				Page not found 
 			</h2>
-			<img src="/img/404.jpg" alt="404 error — page not found" style="display:block;margin:0 auto;max-width:100%;height:auto;"> 
-			<div id="goBack" style="text-align:center;cursor:pointer;font-weight:500;font-size:1.3em;" onmouseover="this.style.fontWeight='700'" onmouseout="this.style.fontWeight='400'">
+			<img id="img404" src="/img/404.jpg" alt="404 error — page not found" style="display:block;margin:0 auto;max-width:100%;height:auto;">			<div id="goBack" style="text-align:center;cursor:pointer;font-weight:500;font-size:1.3em;" onmouseover="this.style.fontWeight='700'" onmouseout="this.style.fontWeight='400'">
 				&larr; PREVIOUS PAGE 
 			</div>
 		</div>
@@ -83,8 +82,11 @@
 (function () {
   try {
     var saved = localStorage.getItem('theme');
+    var img = document.getElementById('img404');
+
     if (saved === 'dark') {
       document.body.classList.add('dark-mode');
+      if (img) img.src = "/img/404-dark.png";
     } else if (saved === 'light') {
       document.body.classList.add('light-mode');
     }
