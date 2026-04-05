@@ -79,5 +79,17 @@
   });
 })();
 </script>
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.body.classList.add('dark-mode');
+    } else if (saved === 'light') {
+      document.body.classList.add('light-mode');
+    }
+  } catch(e) {}
+})();
+</script>
 </body>
 </html>
