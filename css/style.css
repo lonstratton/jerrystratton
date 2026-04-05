@@ -1139,7 +1139,7 @@ body.dark-mode .works figure > a {
   border-top: none;
 }
 body.dark-mode img[src="/img/404.jpg"] {
-  content: url("/img/404-dark.jpg");
+  content: url("/img/404-dark.png");
 }
 
 /*-- system dark mode fallback (no choice made, so follow the system) --*/
@@ -1246,7 +1246,7 @@ body.dark-mode img[src="/img/404.jpg"] {
     border-top: none;
   }
   body:not(.light-mode) img[src="/img/404.jpg"] {
-  content: url("/img/404-dark.jpg");
+  content: url("/img/404-dark.png");
   }
 }
 
