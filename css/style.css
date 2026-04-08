@@ -1034,6 +1034,9 @@ body.light-mode .theme-toggle .mode-light {
 body.light-mode .theme-toggle .mode-dark {
   opacity: 0.4;
 }
+.yt-icon {
+  content: url("../img/yt.png");
+}
 
 /* -------------------------------------------------------------
 ======	DARK MODE
@@ -1138,6 +1141,9 @@ body.dark-mode .gallery {
 body.dark-mode .works figure > a {
   border-top: none;
 }
+body.dark-mode .yt-icon {
+  content: url("../img/yt1.png");
+}
 
 /*-- system dark mode fallback (no choice made, so follow the system) --*/
 @media (prefers-color-scheme: dark) {
@@ -1241,6 +1247,9 @@ body.dark-mode .works figure > a {
   }
   body:not(.light-mode) .works figure > a {
     border-top: none;
+  }
+  body:not(.light-mode) .yt-icon {
+    content: url("../img/yt1.png");
   }
 }
 
