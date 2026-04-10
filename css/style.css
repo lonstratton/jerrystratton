@@ -696,7 +696,7 @@ iframe {
   border: none;
 }
 
-/* -- WORKS / Home-page and Works-page -- */
+/* -- WORKS / Works-page -- */
 .works figure > a {
   display: flex;
   justify-content: center;
@@ -879,7 +879,7 @@ header#navtop::after {
   display: block;
   clear: both;
 }
-.home-page .slideshow {
+.works-page .slideshow {
   width: 80%;
   margin: 0 auto;
 }
@@ -1063,7 +1063,7 @@ body.dark-mode a:hover {
   color: #4da3ff;
   background: none;
 }
-body.dark-mode .home-page .slideshow {
+body.dark-mode .works-page .slideshow {
   background: #111;
 }
 
@@ -1170,7 +1170,7 @@ body.dark-mode .yt-icon {
     color: #4da3ff;
     background: none;
   }
-  body:not(.light-mode) .home-page .slideshow {
+  body:not(.light-mode) .works-page .slideshow {
     background: #111;
   }
   body:not(.light-mode) header nav ul {
