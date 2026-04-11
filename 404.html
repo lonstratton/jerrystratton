@@ -16,27 +16,34 @@
 <body>
 <div class="container">
 	<header id="navtop">
-		<div class="logo fleft">
-			<h1>
-				<a href="/"> JERRY STRATTON <span class="subtitle">photography</span></a> 
-			</h1>
+	<div class="logo fleft">
+		<h1>
+			<a href="/"> JERRY STRATTON <span class="subtitle">photography</span></a> 
+		</h1>
+	</div>
+	<nav class="fright mq2-none">
+		<div class="nav-heading">
+			404 | Not Found
 		</div>
-		<nav class="fright mq2-none">
-			<div class="nav-heading">404 | Not Found</div>
-			<ul>
-				<li><a href="/">Home</a></li>
-			</ul>
+		<div class="nav-links">
 			<ul>
 				<li><a href="/galleries">Galleries</a></li>
 			</ul>
-		</nav>
-		<button id="nav-toggle" class="mq2-only" type="button" aria-expanded="false" aria-controls="mobile-nav"> <span class="nav-toggle-icon" aria-hidden="true"></span> <span class="nav-toggle-icon" aria-hidden="true"></span> <span class="nav-toggle-icon" aria-hidden="true"></span> <span class="nav-toggle-label">Menu</span> </button> 
-		<nav id="mobile-nav" aria-label="Mobile navigation">
 			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="/galleries">Galleries</a></li>
+				<li><a href="/about">About</a></li>
 			</ul>
-		</nav>
+			<ul>
+				<li><a href="/video">Video</a></li>
+			</ul>
+		</div>
+	</nav>
+	<button id="nav-toggle" class="mq2-only" type="button" aria-expanded="false" aria-controls="mobile-nav"> <span class="nav-toggle-icon" aria-hidden="true"></span> <span class="nav-toggle-icon" aria-hidden="true"></span> <span class="nav-toggle-icon" aria-hidden="true"></span> <span class="nav-toggle-label">Menu</span> </button> 
+	<nav id="mobile-nav" aria-label="Mobile navigation">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/galleries">Galleries</a></li>
+		</ul>
+	</nav>
 	</header>
 	<hr>
 	<div class="grid-wrap">
@@ -44,7 +51,8 @@
 			<h2 style="text-align:center;">
 				Page not found 
 			</h2>
-			<img id="img404" src="/img/404.jpg" alt="404 error — page not found" style="display:block;margin:0 auto;max-width:100%;height:auto;">			<div id="goBack" style="text-align:center;cursor:pointer;font-weight:500;font-size:1.3em;" onmouseover="this.style.fontWeight='700'" onmouseout="this.style.fontWeight='400'">
+			<img id="img404" src="/img/404.jpg" alt="404 error — page not found" style="display:block;margin:0 auto;max-width:100%;height:auto;">
+			<div id="goBack" style="text-align:center;cursor:pointer;font-weight:500;font-size:1.3em;" onmouseover="this.style.fontWeight='700'" onmouseout="this.style.fontWeight='400'">
 				&larr; PREVIOUS PAGE 
 			</div>
 		</div>
@@ -80,13 +88,15 @@
 (function () {
   try {
     var saved = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     var img = document.getElementById('img404');
 
-    if (saved === 'dark') {
+    if (saved === 'dark' || (!saved && prefersDark)) {
       document.body.classList.add('dark-mode');
       if (img) img.src = "/img/404-dark.png";
-    } else if (saved === 'light') {
+    } else {
       document.body.classList.add('light-mode');
+      if (img) img.src = "/img/404.jpg";
     }
   } catch(e) {}
 })();
