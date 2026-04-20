@@ -1,146 +1,192 @@
 // Declare the variable outside the $(document).ready block	
-var scrollPosition; 
+var scrollPosition = 0;
 
-// Function to save scroll position
 function saveScrollPosition() {
-    scrollPosition = $(window).scrollTop();
+  scrollPosition = $(window).scrollTop();
 }
 
-// The Modal
+function restoreScrollPosition() {
+  $(window).scrollTop(scrollPosition);
+}
+
+function ensureSharedModal() {
+  if (document.getElementById('sharedModal')) return;
+
+  document.body.insertAdjacentHTML('beforeend', `
+    <div id="sharedModal" class="modal" aria-hidden="true">
+      <span class="close" id="modalClose">&times;</span>
+      <div class="modal-content-wrap">
+        <img id="sharedModalImage" class="modal-image" alt="">
+        <iframe id="sharedModalIframe" class="modal-iframe" src="" allowfullscreen></iframe>
+      </div>
+    </div>
+  `);
+}
+
+function openSharedModal(type, src) {
+  ensureSharedModal();
+  saveScrollPosition();
+
+  var modal = document.getElementById('sharedModal');
+  var image = document.getElementById('sharedModalImage');
+  var iframe = document.getElementById('sharedModalIframe');
+
+  $('body').css('overflow', 'hidden');
+
+  image.classList.remove('is-active');
+  iframe.classList.remove('is-active');
+
+  image.src = '';
+  iframe.src = '';
+
+  if (type === 'image') {
+    image.src = src;
+    image.classList.add('is-active');
+  }
+
+  if (type === 'iframe') {
+    iframe.src = src;
+    iframe.classList.add('is-active');
+  }
+
+  modal.classList.add('is-open');
+  modal.setAttribute('aria-hidden', 'false');
+
+  document.addEventListener('keydown', closeSharedModalOnEscape);
+}
+
+function closeSharedModal() {
+  var modal = document.getElementById('sharedModal');
+  var image = document.getElementById('sharedModalImage');
+  var iframe = document.getElementById('sharedModalIframe');
+
+  if (!modal) return;
+
+  modal.classList.remove('is-open');
+  modal.setAttribute('aria-hidden', 'true');
+
+  image.classList.remove('is-active');
+  iframe.classList.remove('is-active');
+
+  image.src = '';
+  iframe.src = '';
+
+  $('body').css('overflow', 'auto');
+  document.removeEventListener('keydown', closeSharedModalOnEscape);
+  restoreScrollPosition();
+}
+
+function closeSharedModalOnEscape(event) {
+  if (event.key === 'Escape') {
+    closeSharedModal();
+  }
+}
+
 function openModal(imageSrc) {
-    saveScrollPosition(); // Save scroll position before opening the modal
-    $('body').css('overflow', 'hidden'); // Prevent scrolling on the body
-    document.getElementById('imageModal').style.display = 'block';
-    document.getElementById('modalImage').src = imageSrc;
-
-    // Close the modal when clicking on the image
-    document.getElementById('modalImage').onclick = function() {
-        closeModal();
-    };
-
-    // Close the modal on 'Escape' key press
-    document.addEventListener('keydown', closeModalOnEscape);
+  openSharedModal('image', imageSrc);
 }
 
-function closeModalOnEscape(event) {
-    if (event.key === 'Escape') {
-        closeModal();
-    }
-}
-
-function closeModal() {
-    document.getElementById('imageModal').style.display = 'none';
-    $('body').css('overflow', 'auto'); // Allow scrolling on the body
-    document.removeEventListener('keydown', closeModalOnEscape); // Remove the event listener
-    restoreScrollPosition(); // Restore scroll position after closing the modal
-}
-
-// The Modal for Iframe
 function openiframeModal(iframeSrc) {
-    saveScrollPosition(); // Save scroll position before opening the modal
-    $('body').css('overflow', 'hidden'); // Prevent scrolling on the body
-    document.getElementById('iframeModal').style.display = 'block';
-    document.getElementById('modaliframe').src = iframeSrc;
-
-    // Close the modal when clicking on the iframe
-    document.getElementById('modaliframe').onclick = function() {
-        closeiframeModal();
-    };
-
-    // Close the modal on 'Escape' key press
-    document.addEventListener('keydown', closeiframeModalOnEscape);
+  openSharedModal('iframe', iframeSrc);
 }
 
-function closeiframeModalOnEscape(event) {
-    if (event.key === 'Escape') {
-        closeiframeModal();
+$(document).ready(function () {
+  /* shared modal */
+  ensureSharedModal();
+
+  $(document).on('click', '#modalClose', function () {
+    closeSharedModal();
+  });
+
+  $(document).on('click', '#sharedModal', function (e) {
+    if (e.target.id === 'sharedModal') {
+      closeSharedModal();
     }
-}
+  });
 
-function closeiframeModal() {
-    // Stop video playback before closing the modal
-    var iframe = document.getElementById('modaliframe');
-    iframe.src = '';
-    document.getElementById('iframeModal').style.display = 'none';
-    $('body').css('overflow', 'auto'); // Allow scrolling on the body
-    document.removeEventListener('keydown', closeiframeModalOnEscape); // Remove the event listener
-}
+  $(document).on('click', '#sharedModalImage', function () {
+    closeSharedModal();
+  });
 
+  // Smooth scrolling - css-tricks.com
+  function filterPath(string) {
+    return string.replace(/^\//, '').replace(/(index|default).[a-zA-Z]{3,4}$/, '').replace(/\/$/, '');
+  }
 
-$(document).ready(function() {
-    
-// Smooth scrolling - css-tricks.com
-	function filterPath(string) {
-    return string.replace(/^\//,'').replace(/(index|default).[a-zA-Z]{3,4}$/,'').replace(/\/$/,'');
-}
+  var locationPath = filterPath(location.pathname);
+  var scrollElem = scrollableElement('html', 'body');
 
-var locationPath = filterPath(location.pathname);
-var scrollElem = scrollableElement('html', 'body');
-$('a[href*=#nav]').each(function () {
+  $('a[href*=#nav]').each(function () {
     var thisPath = filterPath(this.pathname) || locationPath;
+
     if (locationPath == thisPath && (location.hostname == this.hostname || !this.hostname) && this.hash.replace(/#/, '')) {
-        var $target = $(this.hash),
-            target = this.hash;
-        if (target) {
-            var targetOffset = $target.offset().top;
-            $(this).click(function (event) {
-                event.preventDefault();
-                $(scrollElem).animate({
-                    scrollTop: targetOffset
-                }, 'slow', function () {
-                    location.hash = target;
-                });
-            });
-        }
-    }
-});
+      var $target = $(this.hash),
+        target = this.hash;
 
-function scrollableElement(els) {
+      if (target) {
+        var targetOffset = $target.offset().top;
+
+        $(this).click(function (event) {
+          event.preventDefault();
+          $(scrollElem).animate({
+            scrollTop: targetOffset
+          }, 'slow', function () {
+            location.hash = target;
+          });
+        });
+      }
+    }
+  });
+
+  function scrollableElement(els) {
     for (var i = 0, argLength = arguments.length; i < argLength; i++) {
-        var el = arguments[i],
-            $scrollElement = $(el);
-        if ($scrollElement.scrollTop() > 0) {
-            return el;
-        } else {
-            $scrollElement.scrollTop(1);
-            var isScrollable = $scrollElement.scrollTop() > 0;
-            $scrollElement.scrollTop(0);
-            if (isScrollable) {
-                return el;
-            }
+      var el = arguments[i],
+        $scrollElement = $(el);
+
+      if ($scrollElement.scrollTop() > 0) {
+        return el;
+      } else {
+        $scrollElement.scrollTop(1);
+        var isScrollable = $scrollElement.scrollTop() > 0;
+        $scrollElement.scrollTop(0);
+
+        if (isScrollable) {
+          return el;
         }
+      }
     }
-}
-	
-// OPACITY
-   function applyHoverEffect(className) {
+  }
+
+  // Opacity
+  function applyHoverEffect(className) {
     $(className).css({
-        "opacity": 0
+      opacity: 0
     });
+
     $(className).hover(
-        function () {
-            $(this).stop().animate({
-                "opacity": 0.9
-            }, 'slow');
-            $(this).siblings('img').stop().animate({
-                "opacity": 0.7
-            }, 'fast');
-        },
-        function () {
-            $(this).stop().animate({
-                "opacity": 0
-            }, 'fast');
-            $(this).siblings('img').stop().animate({
-                "opacity": 1
-            }, 'fast');
-        }
+      function () {
+        $(this).stop().animate({
+          opacity: 0.9
+        }, 'slow');
+
+        $(this).siblings('img').stop().animate({
+          opacity: 0.7
+        }, 'fast');
+      },
+      function () {
+        $(this).stop().animate({
+          opacity: 0
+        }, 'fast');
+
+        $(this).siblings('img').stop().animate({
+          opacity: 1
+        }, 'fast');
+      }
     );
-}
+  }
 
-        applyHoverEffect(".zoom");
-    applyHoverEffect(".play");
-
-// END
+  applyHoverEffect('.zoom');
+  applyHoverEffect('.play');
 });
 
 /* ====================================================

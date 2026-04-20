@@ -641,20 +641,37 @@ footer.site-footer {
   padding-left: 10px;
 }
 
-.site-footer__nav a {
+.site-footer__nav a,
+.site-footer__nav span {
+  position: relative;
   color: #999;
   text-decoration: none;
   padding: 0 1em;
-  border-right: 1px solid #DDD;
   font-size: 0.85em;
   line-height: 1.8;
+}
+
+.site-footer__nav > * + *::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 1.3em;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.site-footer__nav .navactive {
+  color: #0078CF;
+  text-transform: uppercase;
 }
 
 .site-footer__nav a:first-child {
   padding-left: 0;
 }
 
-.site-footer__nav a:last-child {
+.site-footer__nav > *:last-child {
   border-right: none;
   padding-right: 0;
 }
@@ -670,6 +687,12 @@ footer.site-footer {
   color: #555;
 }
 
+.copy-note {
+  display: block;
+  font-size: 0.85em;
+  opacity: 0.7;
+}
+
 /* top-of-page link */
 .up a {
   display: block;
@@ -678,54 +701,50 @@ footer.site-footer {
 }
 
 /* -- Modal Container -- */
-#imageModal {
-  display: none; /* Hide the modal by default */
+.modal {
+  display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  inset: 0;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.85);
 }
-/* Modal Content */
-#modalImage {
+
+.modal.is-open {
   display: block;
-  margin: auto;
+}
+
+.modal-content-wrap {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 90%;
+  width: min(90vw, 1400px);
+  max-height: 90vh;
+}
+
+.modal-image,
+.modal-iframe {
+  display: none;
+  margin: 0 auto;
+}
+
+.modal-image.is-active {
+  display: block;
+  max-width: 100%;
   max-height: 90vh;
   box-shadow: 0 15px 20px rgba(110, 110, 110, 0.5);
   border: 2px solid #000;
-  border-radius: 0;
 }
 
-/* Styling specific to the iframe modal */
-#iframeModal #modaliframe {
+.modal-iframe.is-active {
   display: block;
-  position: fixed;
-  z-index: 1;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 85%;
+  width: 85vw;
+  max-width: 1400px;
   height: calc(85vw * 9 / 16);
+  max-height: 85vh;
+  margin: 0 auto;
   border: none;
-}
-
-/* Common styling for both modals */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.85);
 }
 
 .close {
@@ -735,10 +754,7 @@ footer.site-footer {
   color: #fff;
   font-size: 30px;
   cursor: pointer;
-}
-
-iframe {
-  border: none;
+  z-index: 1001;
 }
 
 /* -- WORKS / Works-page -- */
@@ -1285,9 +1301,11 @@ body.dark-mode .other-galleries-grid figcaption a {
 body.dark-mode footer.site-footer {
   color: #aaa;
 }
-body.dark-mode .site-footer__nav a {
-  color: #888;
-  border-right-color: #444;
+body.dark-mode .site-footer__nav > * + *::before {
+  background: rgba(255, 255, 255, 0.18);
+}
+body.dark-mode .site-footer__nav .navactive {
+  color: #4da3ff;
 }
 body.dark-mode .site-footer__nav a:hover {
   color: #fff;
@@ -1400,7 +1418,9 @@ body.dark-mode .yt-icon {
   }
   body:not(.light-mode) .site-footer__nav a {
     color: #888;
-    border-right-color: #444;
+  }
+  body:not(.light-mode) .site-footer__nav > * + *::before {
+    background: rgba(255, 255, 255, 0.18);
   }
   body:not(.light-mode) .site-footer__nav a:hover {
     color: #fff;
